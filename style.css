@@ -1,0 +1,111 @@
+:root {
+  --bg-color: #0a0a0a;
+  --text-color: #d4d4d4;
+  --accent-red: #ff3333;
+  --dim-red: #5c0000;
+  --code-bg: #1a1a1a;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  overflow-x: hidden;
+}
+
+/* Contenedor principal centrado pero con anchos extraños para romper la simetría */
+article {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-left: 1px solid var(--dim-red);
+  position: relative;
+}
+
+/* El acento rojo principal */
+h1, h2 {
+  color: var(--accent-red);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-top: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  border-bottom: 2px solid var(--accent-red);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* Estilo para citas o énfasis fuerte */
+strong {
+  color: var(--accent-red);
+  font-weight: bold;
+}
+
+/* Bloques de código o comandos */
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--dim-red);
+  padding: 1rem;
+  overflow-x: auto;
+  color: var(--accent-red);
+  font-size: 0.9em;
+}
+
+/* Elemento visual: Una línea roja que cruza la pantalla en el fondo */
+.red-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--accent-red);
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Footer simple */
+footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--dim-red);
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+}
+
+a {
+  color: var(--accent-red);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent-red);
+}
+
+a:hover {
+  background-color: var(--accent-red);
+  color: var(--bg-color);
+}
+
+/* Efecto de "glitch" sutil en el título al cargar */
+@keyframes glitch {
+0% { transform: translate(0) }
+20% { transform: translate(-2px, 2px) }
+40% { transform: translate(-2px, -2px) }
+60% { transform: translate(2px, 2px) }
+80% { transform: translate(2px, -2px) }
+100% { transform: translate(0) }
+}
+
+h1:hover {
+  animation: glitch 0.3s infinite;
+}
+
